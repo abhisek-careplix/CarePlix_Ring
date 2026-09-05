@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CFBundleDevelopmentRegion</key>
+	<string>$(DEVELOPMENT_LANGUAGE)</string>
+	<key>CFBundleDisplayName</key>
+	<string>CarePlix Ring</string>
+	<key>CFBundleExecutable</key>
+	<string>$(EXECUTABLE_NAME)</string>
+	<key>CFBundleIdentifier</key>
+	<string>$(PRODUCT_BUNDLE_IDENTIFIER)</string>
+	<key>CFBundleInfoDictionaryVersion</key>
+	<string>6.0</string>
+	<key>CFBundleName</key>
+	<string>$(PRODUCT_NAME)</string>
+	<key>CFBundlePackageType</key>
+	<string>$(PRODUCT_BUNDLE_PACKAGE_TYPE)</string>
+	<key>CFBundleShortVersionString</key>
+	<string>$(MARKETING_VERSION)</string>
+	<key>CFBundleVersion</key>
+	<string>$(CURRENT_PROJECT_VERSION)</string>
+	<key>ITSAppUsesNonExemptEncryption</key>
+	<false/>
+	<key>LSRequiresIPhoneOS</key>
+	<true/>
+	<key>NSBluetoothAlwaysUsageDescription</key>
+	<string>CarePlix Ring connects to your ring over Bluetooth. This is the only way the app can read your sleep, heart rate, blood oxygen, breathing rate and skin temperature from the ring, check its battery, and keep its clock and your profile in sync. Without Bluetooth the app cannot show any readings.</string>
+	<key>NSBluetoothPeripheralUsageDescription</key>
+	<string>CarePlix Ring uses Bluetooth to communicate with your ring so it can read your measurements and keep the ring's settings in sync.</string>
+	<key>NSMotionUsageDescription</key>
+	<string>Used by the ring library to process step and activity data from your ring.</string>
+	<key>NSHealthShareUsageDescription</key>
+	<string>Reads nothing. Present only so the Health write permission sheet can be shown.</string>
+	<key>NSHealthUpdateUsageDescription</key>
+	<string>Optionally writes your ring's sleep, heart rate, blood oxygen, breathing rate, skin temperature and steps to Apple Health so they appear alongside your other data. You choose which in the Health permission sheet.</string>
+	<key>UILaunchScreen</key>
+	<dict>
+		<key>UIColorName</key>
+		<string>LaunchBackground</string>
+	</dict>
+	<key>UIRequiredDeviceCapabilities</key>
+	<array>
+		<string>arm64</string>
+		<string>bluetooth-le</string>
+	</array>
+	<key>UISupportedInterfaceOrientations</key>
+	<array>
+		<string>UIInterfaceOrientationPortrait</string>
+	</array>
+	<key>UIUserInterfaceStyle</key>
+	<string>Automatic</string>
+	<key>UIViewControllerBasedStatusBarAppearance</key>
+	<true/>
+</dict>
+</plist>

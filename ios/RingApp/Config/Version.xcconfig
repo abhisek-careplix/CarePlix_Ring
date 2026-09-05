@@ -1,0 +1,5 @@
+// Single source of truth for the app's version. Edited by scripts/bump-version.sh.
+// MARKETING_VERSION is what users see (CFBundleShortVersionString).
+// CURRENT_PROJECT_VERSION is the build number (CFBundleVersion); it must increase on every upload.
+MARKETING_VERSION = 1.0.0
+CURRENT_PROJECT_VERSION = 1

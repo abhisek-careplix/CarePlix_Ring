@@ -1,0 +1,185 @@
+{
+  "pages": [
+    {
+      "id": "screens",
+      "name": "Screens"
+    },
+    {
+      "id": "directions",
+      "name": "Direction sketches"
+    }
+  ],
+  "artboards": [
+    {
+      "file": "Pairing.dc.html",
+      "title": "Pairing · found",
+      "x": 0,
+      "y": 0,
+      "w": 390,
+      "h": 844,
+      "page": "screens"
+    },
+    {
+      "file": "Profile.dc.html",
+      "title": "About you · wear finger",
+      "x": 480,
+      "y": 0,
+      "w": 390,
+      "h": 844,
+      "page": "screens"
+    },
+    {
+      "file": "Main.dc.html",
+      "title": "Today · morning",
+      "x": 960,
+      "y": 0,
+      "w": 390,
+      "h": 1826,
+      "page": "screens"
+    },
+    {
+      "file": "TodayEvening.dc.html",
+      "title": "Today · evening, low battery",
+      "x": 1440,
+      "y": 0,
+      "w": 390,
+      "h": 1456,
+      "page": "screens"
+    },
+    {
+      "file": "TodayLearning.dc.html",
+      "title": "Today · learning (night 3)",
+      "x": 1920,
+      "y": 0,
+      "w": 390,
+      "h": 1344,
+      "page": "screens"
+    },
+    {
+      "file": "Ring.dc.html",
+      "title": "Ring sheet · battery & sync",
+      "x": 2400,
+      "y": 0,
+      "w": 390,
+      "h": 1745,
+      "page": "screens"
+    },
+    {
+      "file": "Sleep.dc.html",
+      "title": "Sleep · last night",
+      "x": 0,
+      "y": 2026,
+      "w": 390,
+      "h": 2259,
+      "page": "screens"
+    },
+    {
+      "file": "SleepNotWorn.dc.html",
+      "title": "Sleep · not worn / ran out",
+      "x": 480,
+      "y": 2026,
+      "w": 390,
+      "h": 1009,
+      "page": "screens"
+    },
+    {
+      "file": "Measure.dc.html",
+      "title": "Measure",
+      "x": 960,
+      "y": 2026,
+      "w": 390,
+      "h": 1443,
+      "page": "screens"
+    },
+    {
+      "file": "MeasureSession.dc.html",
+      "title": "Measure · heart rate test",
+      "x": 1440,
+      "y": 2026,
+      "w": 390,
+      "h": 844,
+      "page": "screens"
+    },
+    {
+      "file": "Breathe.dc.html",
+      "title": "Breathe",
+      "x": 1920,
+      "y": 2026,
+      "w": 390,
+      "h": 1303,
+      "page": "screens"
+    },
+    {
+      "file": "DirectionB.dc.html",
+      "title": "Direction B · Vitals first",
+      "x": 0,
+      "y": 0,
+      "w": 390,
+      "h": 844,
+      "page": "directions"
+    },
+    {
+      "file": "DirectionC.dc.html",
+      "title": "Direction C · Editorial",
+      "x": 480,
+      "y": 0,
+      "w": 390,
+      "h": 844,
+      "page": "directions"
+    }
+  ],
+  "annotations": [
+    {
+      "id": "brief",
+      "x": 0,
+      "y": -210,
+      "w": 420,
+      "page": "screens",
+      "text": "CarePlix Ring · redesign\nFour tabs: Today · Sleep · Measure · Breathe. The search bar is gone. The ring lives in a status shelf above the tab bar on every screen: connection · battery · last sync. Tall frames show the full scroll; the floating chrome is drawn once at the bottom of each frame."
+    },
+    {
+      "id": "hero-note",
+      "x": 960,
+      "y": -170,
+      "w": 380,
+      "page": "screens",
+      "text": "Today's hero is time-aware: Readiness in the morning, Stress or Activity in the afternoon, Tonight (bedtime + battery) in the evening, and an honest Learning state for the first 7 nights."
+    },
+    {
+      "id": "vitals-note",
+      "x": 1440,
+      "y": -110,
+      "w": 360,
+      "page": "screens",
+      "text": "Every vital is shown against the wearer's own 14-night range and gets exactly one of: Typical · Outside typical · Learning · Not measured."
+    },
+    {
+      "id": "sleep-note",
+      "x": 0,
+      "y": 1876,
+      "w": 420,
+      "page": "screens",
+      "text": "Sleep: hypnogram from the ring's per-minute stage line, gaps drawn as gaps, a red marker where the battery died. Not-worn and partial nights are first-class states, never blank."
+    },
+    {
+      "id": "measure-note",
+      "x": 960,
+      "y": 1876,
+      "w": 420,
+      "page": "screens",
+      "text": "Measure = how am I right now. Spot tests are gated by the ring's capability flags; every test has explicit exits: not on finger, ring busy, battery too low, timed out."
+    },
+    {
+      "id": "dir-note",
+      "x": 0,
+      "y": -170,
+      "w": 520,
+      "page": "directions",
+      "text": "Two alternates to the chosen 'One big thing' direction on the Screens page. B is Apple-Vitals honesty with no composite score; C is an editorial narrative. Both kept low-fi so the structural difference is the only thing to compare."
+    }
+  ],
+  "launch": {
+    "view": "canvas",
+    "page": "screens"
+  }
+}
