@@ -34,7 +34,7 @@
       "x": 960,
       "y": 0,
       "w": 390,
-      "h": 1843,
+      "h": 1826,
       "page": "screens"
     },
     {
@@ -43,7 +43,7 @@
       "x": 1440,
       "y": 0,
       "w": 390,
-      "h": 901,
+      "h": 1456,
       "page": "screens"
     },
     {
@@ -52,7 +52,7 @@
       "x": 1920,
       "y": 0,
       "w": 390,
-      "h": 1147,
+      "h": 1344,
       "page": "screens"
     },
     {
@@ -61,41 +61,41 @@
       "x": 2400,
       "y": 0,
       "w": 390,
-      "h": 1647,
+      "h": 1745,
       "page": "screens"
     },
     {
       "file": "Sleep.dc.html",
       "title": "Sleep · last night",
       "x": 0,
-      "y": 2043,
+      "y": 2026,
       "w": 390,
-      "h": 2147,
+      "h": 2259,
       "page": "screens"
     },
     {
       "file": "SleepNotWorn.dc.html",
       "title": "Sleep · not worn / ran out",
       "x": 480,
-      "y": 2043,
+      "y": 2026,
       "w": 390,
-      "h": 935,
+      "h": 1009,
       "page": "screens"
     },
     {
       "file": "Measure.dc.html",
       "title": "Measure",
       "x": 960,
-      "y": 2043,
+      "y": 2026,
       "w": 390,
-      "h": 1313,
+      "h": 1443,
       "page": "screens"
     },
     {
       "file": "MeasureSession.dc.html",
       "title": "Measure · heart rate test",
       "x": 1440,
-      "y": 2043,
+      "y": 2026,
       "w": 390,
       "h": 844,
       "page": "screens"
@@ -104,9 +104,9 @@
       "file": "Breathe.dc.html",
       "title": "Breathe",
       "x": 1920,
-      "y": 2043,
+      "y": 2026,
       "w": 390,
-      "h": 1305,
+      "h": 1303,
       "page": "screens"
     },
     {
@@ -156,7 +156,7 @@
     {
       "id": "sleep-note",
       "x": 0,
-      "y": 1893,
+      "y": 1876,
       "w": 420,
       "page": "screens",
       "text": "Sleep: hypnogram from the ring's per-minute stage line, gaps drawn as gaps, a red marker where the battery died. Not-worn and partial nights are first-class states, never blank."
@@ -164,7 +164,7 @@
     {
       "id": "measure-note",
       "x": 960,
-      "y": 1893,
+      "y": 1876,
       "w": 420,
       "page": "screens",
       "text": "Measure = how am I right now. Spot tests are gated by the ring's capability flags; every test has explicit exits: not on finger, ring busy, battery too low, timed out."

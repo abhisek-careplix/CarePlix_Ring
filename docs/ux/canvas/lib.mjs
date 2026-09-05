@@ -13,7 +13,7 @@ export const esc = (s) => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;')
 
 // ---------- icons (stroke, 24 grid) ----------
 const ico = (paths, size = 22, color = 'currentColor', sw = 1.8) =>
-  `<svg width="${size}" height="${size}" viewBox="0 0 24 24" fill="none" stroke="${color}" stroke-width="${sw}" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${paths}</svg>`;
+  `<svg width="${size}" height="${size}" viewBox="0 0 24 24" fill="none" stroke="${color}" stroke-width="${sw}" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex:none">${paths}</svg>`;
 export const icons = {
   sun: (s, c) => ico('<path d="M3 17h18"></path><path d="M6 17a6 6 0 0 1 12 0"></path><path d="M12 5v2"></path><path d="M5 9l1.5 1.5"></path><path d="M19 9l-1.5 1.5"></path>', s, c),
   moon: (s, c) => ico('<path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5z"></path>', s, c),
@@ -81,7 +81,7 @@ export const bars = (vals, { w = 326, h = 64, color = T.good, max = null, radius
 };
 
 // hypnogram: stages array of 'awake'|'rem'|'light'|'deep'|'gap', each = N minutes
-export const hypnogram = (stages, { w = 326, h = 132, lossAt = null, labels = ['23:12', '01', '03', '05', '06:54'] } = {}) => {
+export const hypnogram = (stages, { w = 326, h = 132, lossAt = null, labels = ['23:12', '01', '03', '05', '06:54'], labelFracs = null } = {}) => {
   const lanes = { awake: 0, rem: 1, light: 2, deep: 3 }, laneH = 22, gapY = 6, top = 4;
   const n = stages.length, bw = w / n;
   const laneLabels = Object.entries(lanes).map(([k, i]) => `<text x="0" y="${top + i * (laneH + gapY) + laneH / 2 + 3.5}" fill="${T.tertiary}" font-size="10" font-family="${FONT}">${k === 'rem' ? 'REM' : k[0].toUpperCase() + k.slice(1)}</text>`).join('');
@@ -93,7 +93,7 @@ export const hypnogram = (stages, { w = 326, h = 132, lossAt = null, labels = ['
   // connectors between consecutive different stages
   let conn = ''; for (let i = 1; i < n; i++) { if (stages[i] !== stages[i - 1] && stages[i] !== 'gap' && stages[i - 1] !== 'gap') { const y1 = top + lanes[stages[i - 1]] * (laneH + gapY) + laneH / 2, y2 = top + lanes[stages[i]] * (laneH + gapY) + laneH / 2; conn += `<line x1="${(offset + i * pbw).toFixed(1)}" x2="${(offset + i * pbw).toFixed(1)}" y1="${y1}" y2="${y2}" stroke="${T.strong}" stroke-width="1"></line>`; } }
   const loss = lossAt != null ? `<line x1="${(offset + lossAt * pbw).toFixed(1)}" x2="${(offset + lossAt * pbw).toFixed(1)}" y1="0" y2="${h - 16}" stroke="${T.poor}" stroke-width="1.5" stroke-dasharray="3 3"></line>` : '';
-  const xl = labels.map((l, k) => `<text x="${offset + (k / (labels.length - 1)) * pw}" y="${h - 2}" fill="${T.tertiary}" font-size="10" font-family="${FONT}" text-anchor="${k === 0 ? 'start' : k === labels.length - 1 ? 'end' : 'middle'}">${esc(l)}</text>`).join('');
+  const xl = labels.map((l, k) => `<text x="${offset + (labelFracs ? labelFracs[k] : k / (labels.length - 1)) * pw}" y="${h - 2}" fill="${T.tertiary}" font-size="10" font-family="${FONT}" text-anchor="${k === 0 ? 'start' : k === labels.length - 1 ? 'end' : 'middle'}">${esc(l)}</text>`).join('');
   return `<svg width="${w}" height="${h}" viewBox="0 0 ${w} ${h}" aria-hidden="true" style="display:block"><defs><pattern id="hatch2" width="6" height="6" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><line x1="0" y1="0" x2="0" y2="6" stroke="${T.hairline}" stroke-width="2"></line></pattern></defs>${laneLabels}${conn}${blocks}${loss}${xl}</svg>`;
 };
 
@@ -121,7 +121,7 @@ export const brandButton = (t, style = '') => `<div style="display:flex; align-i
 export const vitalTile = ({ title, value, unit, state, stateText, hist, color = T.primary, band = null, outliers = [], prov }) => card(`
   <div style="display:flex; justify-content:space-between; align-items:center;"><div style="font-size:13px; font-weight:600; color:${T.secondary};">${esc(title)}</div></div>
   ${numeral(value, unit, 30, 14)}
-  <div style="display:flex; justify-content:space-between; align-items:flex-end; gap:8px;">${chip(state, stateText)}${sparkline(hist, color, 76, 24, band, outliers)}</div>
+  <div style="display:flex; justify-content:space-between; align-items:flex-end; gap:8px;">${chip(state, stateText)}${hist && hist.length > 1 ? sparkline(hist, color, 76, 24, band, outliers) : ''}</div>
   ${prov ? provenance(prov) : ''}`, 'padding:14px; gap:10px;');
 
 // score shortcut: compact ring + label
@@ -140,7 +140,7 @@ export const tabBar = (active, { accessory = 'connected' } = {}) => {
     disconnected: `<span style="width:8px; height:8px; border-radius:50%; background:${T.abstained}; flex:none;"></span><span style="font-weight:600; color:${T.primary};">LOOP-E5FF</span><span style="color:${T.secondary};">Not connected</span><span style="margin-left:auto; color:${T.tertiary}; overflow:hidden; text-overflow:ellipsis;">Last sync 14:02</span>`,
     none: '',
   }[accessory];
-  const accBar = acc ? `<div style="display:flex; align-items:center; gap:10px; height:40px; padding:0 14px; border-radius:16px; background:${T.elevated}E6; border:0.5px solid ${T.hairline}; font-size:13px; backdrop-filter:blur(20px); white-space:nowrap; overflow:hidden;">${acc}${icons.chevron(14, T.tertiary)}</div>` : '';
+  const accBar = acc ? `<div style="display:flex; align-items:center; gap:10px; height:44px; padding:0 14px; border-radius:16px; background:${T.elevated}E6; border:0.5px solid ${T.hairline}; font-size:13px; backdrop-filter:blur(20px); white-space:nowrap; overflow:hidden;">${acc}${icons.chevron(14, T.tertiary)}</div>` : '';
   return `<div style="position:absolute; left:16px; right:16px; bottom:22px; display:flex; flex-direction:column; gap:8px;">${accBar}
   <div style="display:flex; align-items:center; height:60px; padding:0 8px; border-radius:30px; background:${T.elevated}E6; border:0.5px solid ${T.hairline}; backdrop-filter:blur(24px); box-shadow:0 8px 30px rgba(0,0,0,0.45);">
     ${tabs.map(([l, ic]) => { const on = l === active; return `<div style="flex:1; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:3px; height:48px; border-radius:24px; ${on ? `background:${T.card};` : ''}">${ic(22, on ? T.primary : T.tertiary)}<div style="font-size:10px; font-weight:600; color:${on ? T.primary : T.tertiary};">${l}</div></div>`; }).join('')}
