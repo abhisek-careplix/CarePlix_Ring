@@ -1,0 +1,424 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		C1000000000000000000A001 /* CarePlixRingApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1000000000000000000F001 /* CarePlixRingApp.swift */; };
+		C1000000000000000000A002 /* AppDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1000000000000000000F002 /* AppDataSource.swift */; };
+		C1000000000000000000A003 /* VeepooRingDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1000000000000000000F003 /* VeepooRingDataSource.swift */; };
+		C1000000000000000000A004 /* VeepooRingLink.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1000000000000000000F004 /* VeepooRingLink.swift */; };
+		C1000000000000000000A005 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C1000000000000000000F005 /* Assets.xcassets */; };
+		C1000000000000000000A006 /* RingExperience in Frameworks */ = {isa = PBXBuildFile; productRef = C1000000000000000000D001 /* RingExperience */; };
+		C1000000000000000000A007 /* RingDiscovery in Frameworks */ = {isa = PBXBuildFile; productRef = C1000000000000000000D002 /* RingDiscovery */; };
+		C1000000000000000000A008 /* FMDB in Frameworks */ = {isa = PBXBuildFile; productRef = C1000000000000000000D003 /* FMDB */; };
+		C1000000000000000000A009 /* MJExtension in Frameworks */ = {isa = PBXBuildFile; productRef = C1000000000000000000D004 /* MJExtension */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		C1000000000000000000F001 /* CarePlixRingApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarePlixRingApp.swift; sourceTree = "<group>"; };
+		C1000000000000000000F002 /* AppDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDataSource.swift; sourceTree = "<group>"; };
+		C1000000000000000000F003 /* VeepooRingDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VeepooRingDataSource.swift; sourceTree = "<group>"; };
+		C1000000000000000000F004 /* VeepooRingLink.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VeepooRingLink.swift; sourceTree = "<group>"; };
+		C1000000000000000000F005 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		C1000000000000000000F006 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C1000000000000000000F007 /* CarePlix Ring.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "CarePlix Ring.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C1000000000000000000F008 /* CarePlixRing.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = CarePlixRing.xcconfig; sourceTree = "<group>"; };
+		C1000000000000000000F009 /* Version.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Version.xcconfig; sourceTree = "<group>"; };
+		C1000000000000000000F00A /* Signing.xcconfig.template */ = {isa = PBXFileReference; lastKnownFileType = text; path = Signing.xcconfig.template; sourceTree = "<group>"; };
+		C1000000000000000000F00B /* Vendor.xcconfig.template */ = {isa = PBXFileReference; lastKnownFileType = text; path = Vendor.xcconfig.template; sourceTree = "<group>"; };
+		C1000000000000000000F00C /* RingExperience */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = RingExperience; path = ../RingExperience; sourceTree = "<group>"; };
+		C1000000000000000000F00D /* RingDiscovery */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = RingDiscovery; path = ../RingDiscovery; sourceTree = "<group>"; };
+		C1000000000000000000F00E /* ExportOptions.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = ExportOptions.plist; sourceTree = "<group>"; };
+		C1000000000000000000F00F /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		C1000000000000000000B002 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C1000000000000000000A006 /* RingExperience in Frameworks */,
+				C1000000000000000000A007 /* RingDiscovery in Frameworks */,
+				C1000000000000000000A008 /* FMDB in Frameworks */,
+				C1000000000000000000A009 /* MJExtension in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		C10000000000000000000001 = {
+			isa = PBXGroup;
+			children = (
+				C1000000000000000000F00F /* README.md */,
+				C10000000000000000000002 /* CarePlixRing */,
+				C10000000000000000000003 /* Config */,
+				C10000000000000000000004 /* Packages */,
+				C1000000000000000000F00E /* ExportOptions.plist */,
+				C10000000000000000000005 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		C10000000000000000000002 /* CarePlixRing */ = {
+			isa = PBXGroup;
+			children = (
+				C1000000000000000000F001 /* CarePlixRingApp.swift */,
+				C1000000000000000000F002 /* AppDataSource.swift */,
+				C10000000000000000000006 /* Vendor */,
+				C1000000000000000000F005 /* Assets.xcassets */,
+				C1000000000000000000F006 /* Info.plist */,
+			);
+			path = CarePlixRing;
+			sourceTree = "<group>";
+		};
+		C10000000000000000000003 /* Config */ = {
+			isa = PBXGroup;
+			children = (
+				C1000000000000000000F008 /* CarePlixRing.xcconfig */,
+				C1000000000000000000F009 /* Version.xcconfig */,
+				C1000000000000000000F00A /* Signing.xcconfig.template */,
+				C1000000000000000000F00B /* Vendor.xcconfig.template */,
+			);
+			path = Config;
+			sourceTree = "<group>";
+		};
+		C10000000000000000000004 /* Packages */ = {
+			isa = PBXGroup;
+			children = (
+				C1000000000000000000F00C /* RingExperience */,
+				C1000000000000000000F00D /* RingDiscovery */,
+			);
+			name = Packages;
+			sourceTree = "<group>";
+		};
+		C10000000000000000000005 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				C1000000000000000000F007 /* CarePlix Ring.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		C10000000000000000000006 /* Vendor */ = {
+			isa = PBXGroup;
+			children = (
+				C1000000000000000000F003 /* VeepooRingDataSource.swift */,
+				C1000000000000000000F004 /* VeepooRingLink.swift */,
+			);
+			path = Vendor;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		C10000000000000000000010 /* CarePlixRing */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C10000000000000000000020 /* Build configuration list for PBXNativeTarget "CarePlixRing" */;
+			buildPhases = (
+				C1000000000000000000B001 /* Sources */,
+				C1000000000000000000B002 /* Frameworks */,
+				C1000000000000000000B003 /* Resources */,
+				C1000000000000000000B004 /* Embed vendor frameworks (if present) */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CarePlixRing;
+			packageProductDependencies = (
+				C1000000000000000000D001 /* RingExperience */,
+				C1000000000000000000D002 /* RingDiscovery */,
+				C1000000000000000000D003 /* FMDB */,
+				C1000000000000000000D004 /* MJExtension */,
+			);
+			productName = CarePlixRing;
+			productReference = C1000000000000000000F007 /* CarePlix Ring.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		C10000000000000000000000 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1500;
+				LastUpgradeCheck = 1500;
+				TargetAttributes = {
+					C10000000000000000000010 = {
+						CreatedOnToolsVersion = 15.0;
+					};
+				};
+			};
+			buildConfigurationList = C10000000000000000000021 /* Build configuration list for PBXProject "CarePlixRing" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = C10000000000000000000001;
+			packageReferences = (
+				C1000000000000000000E001 /* XCRemoteSwiftPackageReference "fmdb" */,
+				C1000000000000000000E002 /* XCRemoteSwiftPackageReference "MJExtension" */,
+			);
+			productRefGroup = C10000000000000000000005 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				C10000000000000000000010 /* CarePlixRing */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		C1000000000000000000B003 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C1000000000000000000A005 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		C1000000000000000000B004 /* Embed vendor frameworks (if present) */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Embed vendor frameworks (if present)";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# The Veepoo SDK ships four DYNAMIC helper frameworks next to its static archives. Static ones are\n# linked by Config/Vendor.xcconfig and need nothing here; dynamic ones must be copied into the app\n# bundle and re-signed. This phase is a no-op when ios/Frameworks is absent (demo-mode build) or on\n# simulator builds (the vendor binaries have no simulator slice).\nset -e\n[ \"$PLATFORM_NAME\" = \"iphoneos\" ] || exit 0\nSRC=\"$SRCROOT/../Frameworks\"\n[ -d \"$SRC\" ] || exit 0\nDEST=\"$TARGET_BUILD_DIR/$FRAMEWORKS_FOLDER_PATH\"\nfor fw in \"$SRC\"/*.framework; do\n  [ -d \"$fw\" ] || continue\n  name=$(basename \"$fw\" .framework)\n  if file \"$fw/$name\" | grep -q 'dynamically linked'; then\n    mkdir -p \"$DEST\"\n    rsync -a --delete \"$fw\" \"$DEST/\"\n    if [ -n \"${EXPANDED_CODE_SIGN_IDENTITY:-}\" ]; then\n      codesign --force --sign \"$EXPANDED_CODE_SIGN_IDENTITY\" --preserve-metadata=identifier,entitlements \"$DEST/$name.framework\"\n    fi\n  fi\ndone\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		C1000000000000000000B001 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C1000000000000000000A001 /* CarePlixRingApp.swift in Sources */,
+				C1000000000000000000A002 /* AppDataSource.swift in Sources */,
+				C1000000000000000000A003 /* VeepooRingDataSource.swift in Sources */,
+				C1000000000000000000A004 /* VeepooRingLink.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		C10000000000000000000030 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		C10000000000000000000031 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		C10000000000000000000032 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C1000000000000000000F008 /* CarePlixRing.xcconfig */;
+			buildSettings = {
+			};
+			name = Debug;
+		};
+		C10000000000000000000033 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C1000000000000000000F008 /* CarePlixRing.xcconfig */;
+			buildSettings = {
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		C10000000000000000000020 /* Build configuration list for PBXNativeTarget "CarePlixRing" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C10000000000000000000032 /* Debug */,
+				C10000000000000000000033 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C10000000000000000000021 /* Build configuration list for PBXProject "CarePlixRing" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C10000000000000000000030 /* Debug */,
+				C10000000000000000000031 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		C1000000000000000000E001 /* XCRemoteSwiftPackageReference "fmdb" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ccgus/fmdb";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.7.12;
+			};
+		};
+		C1000000000000000000E002 /* XCRemoteSwiftPackageReference "MJExtension" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/CoderMJLee/MJExtension";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.4.2;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		C1000000000000000000D001 /* RingExperience */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = RingExperience;
+		};
+		C1000000000000000000D002 /* RingDiscovery */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = RingDiscovery;
+		};
+		C1000000000000000000D003 /* FMDB */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C1000000000000000000E001 /* XCRemoteSwiftPackageReference "fmdb" */;
+			productName = FMDB;
+		};
+		C1000000000000000000D004 /* MJExtension */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C1000000000000000000E002 /* XCRemoteSwiftPackageReference "MJExtension" */;
+			productName = MJExtension;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = C10000000000000000000000 /* Project object */;
+}

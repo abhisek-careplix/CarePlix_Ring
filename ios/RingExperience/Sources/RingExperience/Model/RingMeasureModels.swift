@@ -13,7 +13,7 @@ import Foundation
 
 // MARK: - Spot measurements
 
-public enum SpotKind: String, CaseIterable, Hashable, Sendable, Identifiable {
+public enum SpotKind: String, CaseIterable, Hashable, Sendable, Identifiable, Codable {
     case heartRate, bloodOxygen, hrv, stress, skinTemperature, breathingRate
     public var id: String { rawValue }
 
@@ -43,7 +43,7 @@ public enum SpotKind: String, CaseIterable, Hashable, Sendable, Identifiable {
         switch self {
         case .heartRate: return "heart.fill"
         case .bloodOxygen: return "drop.fill"
-        case .hrv: return "waveform.path.ecg"
+        case .hrv: return "waveform"
         case .stress: return "brain.head.profile"
         case .skinTemperature: return "thermometer.medium"
         case .breathingRate: return "wind"
@@ -81,7 +81,7 @@ public enum SpotKind: String, CaseIterable, Hashable, Sendable, Identifiable {
     }
 }
 
-public struct SpotMeasurement: Equatable, Sendable, Identifiable {
+public struct SpotMeasurement: Equatable, Sendable, Identifiable, Codable {
     public var id: UUID
     public var kind: SpotKind
     public var value: Double

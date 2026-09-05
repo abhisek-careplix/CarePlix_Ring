@@ -11,6 +11,7 @@
 
 import Foundation
 import Combine
+import RingDiscovery
 
 @MainActor
 public protocol RingDataSource: ObservableObject {
@@ -32,6 +33,14 @@ public protocol RingDataSource: ObservableObject {
     var heartRateToday: [TimedSample] { get }
     /// Seven days of battery reads for the Ring sheet history line.
     var batteryHistory: [TimedSample] { get }
+    /// When the phone last pulled data off the ring.
+    var lastSync: Date? { get }
+    /// True for the demo data source, so the Ring sheet can say "Demo data".
+    var isDemo: Bool { get }
+    /// The link the pairing screen should connect through. Nil in demo builds.
+    var pairingLink: (any RingLinking)? { get }
+    /// The ring's low-power mode (`lowPowerModel`).
+    var isLowPowerMode: Bool { get }
 
     /// Pulls last night (and anything since) off the ring. Updates `connection` as it goes.
     func sync() async
@@ -49,13 +58,28 @@ public protocol RingDataSource: ObservableObject {
     func adoptPairedRing(id: String, name: String) async
     /// Reconnects to the remembered ring after a drop (J6).
     func reconnect() async
+    func setLowPowerMode(_ on: Bool) async
+    /// Danger zone. Both no-ops by default; the vendor adapter implements them.
+    func powerOffRing() async
+    func resetRingData() async
 
     func heroNow(at date: Date) -> TodayHero
 }
 
-// MARK: - Hero selection
+// MARK: - Defaults
 
 public extension RingDataSource {
+    var isDemo: Bool { false }
+    var pairingLink: (any RingLinking)? { nil }
+    var isLowPowerMode: Bool { false }
+    var lastSync: Date? {
+        if case let .notConnected(lastSync) = connection { return lastSync }
+        return nil
+    }
+    func setLowPowerMode(_ on: Bool) async {}
+    func powerOffRing() async {}
+    func resetRingData() async {}
+
     /// Default hero selection; data sources rarely need to override it.
     func heroNow(at date: Date) -> TodayHero {
         HeroSelection.select(

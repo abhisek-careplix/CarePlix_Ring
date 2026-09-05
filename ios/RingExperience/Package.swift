@@ -7,8 +7,10 @@
 //  adapter. Pairing is NOT reimplemented here — it comes from `../RingDiscovery`, whose
 //  `RingPairingModel` is rendered one-phase-at-a-time by `PairingScreen`.
 //
-//  The vendor adapter is behind `#if canImport(VeepooBleSDK)`, so this package builds and its
-//  tests run on a machine that has never seen the vendor framework.
+//  This package is vendor-free. The Veepoo adapter (`VeepooRingDataSource`) lives in the app
+//  target — ios/RingApp/CarePlixRing/Vendor — behind the `VEEPOO` compile flag, because a SwiftPM
+//  target never sees an app's framework search paths. So this builds, and its tests run, on a
+//  machine that has never seen the vendor framework.
 //
 
 import PackageDescription

@@ -14,7 +14,7 @@ import Foundation
 // MARK: - Ring state
 
 /// What the ring reported about its battery. `percent` OR `bars` is set, depending on firmware.
-public struct Battery: Equatable, Sendable {
+public struct Battery: Equatable, Sendable, Codable {
     public var percent: Int?
     /// 0–4 bars on firmware that does not report a percentage.
     public var bars: Int?
@@ -79,7 +79,7 @@ public enum RingConnection: Equatable, Sendable {
 
 /// Which sensors the connected ring reports. Populated after the handshake, cached per ring so
 /// a transient drop does not blank the UI. Anything not listed here is never shown.
-public struct RingCapabilities: Equatable, Sendable {
+public struct RingCapabilities: Equatable, Sendable, Codable {
     public var heartRate: Bool
     public var hrv: Bool
     public var spo2: Bool
@@ -124,7 +124,7 @@ public struct RingCapabilities: Equatable, Sendable {
 
 // MARK: - Vitals
 
-public enum VitalKind: String, CaseIterable, Hashable, Sendable, Identifiable {
+public enum VitalKind: String, CaseIterable, Hashable, Sendable, Identifiable, Codable {
     case restingHeartRate, hrv, spo2, breathingRate, skinTempDelta, sleepDuration
     public var id: String { rawValue }
 
@@ -153,7 +153,7 @@ public enum VitalKind: String, CaseIterable, Hashable, Sendable, Identifiable {
     public var symbol: String {
         switch self {
         case .restingHeartRate: return "heart.fill"
-        case .hrv: return "waveform.path.ecg"
+        case .hrv: return "waveform"
         case .spo2: return "drop.fill"
         case .breathingRate: return "wind"
         case .skinTempDelta: return "thermometer.medium"
@@ -187,7 +187,7 @@ public enum VitalKind: String, CaseIterable, Hashable, Sendable, Identifiable {
 }
 
 /// Where a value sits against the user's own range.
-public enum RangeState: Equatable, Sendable {
+public enum RangeState: Equatable, Sendable, Codable {
     case typical
     case outsideTypical
     /// Fewer than `needed` nights recorded so far.
@@ -343,7 +343,7 @@ public enum SleepStage: Int, CaseIterable, Hashable, Sendable {
     public static let lanes: [SleepStage] = [.awake, .rem, .light, .deep]
 }
 
-public struct TimedSample: Equatable, Sendable, Identifiable {
+public struct TimedSample: Equatable, Sendable, Identifiable, Codable {
     public var time: Date
     public var value: Double
     public var id: Date { time }

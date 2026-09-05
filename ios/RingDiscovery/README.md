@@ -147,6 +147,8 @@ nothing here confirms the ring's advertising duty cycle.
 ## Using it
 
 ```swift
+// VeepooRingLink lives in the APP target (ios/RingApp/CarePlixRing/Vendor/VeepooRingLink.swift),
+// compiled only when the `VEEPOO` flag is defined. Demo builds pass `link: nil`.
 @StateObject private var model = RingPairingModel(link: VeepooRingLink.shared)
 
 var body: some View {
@@ -200,13 +202,15 @@ toolchain and no Xcode, so `swift build` and `swift test` have not been run, and
 
 ```bash
 cd ios/RingDiscovery
-swift build && swift test          # the vendor SDK is not required; RingLink compiles out
+swift build && swift test          # the vendor SDK is not required; nothing here imports it
 ```
 
-`RingLink`'s Veepoo implementation is behind `#if canImport(VeepooBleSDK)`, so the package builds
-and its tests run without the vendor framework present — but that also means **the vendor-facing
-code path is the part least protected by these tests.** Compile it inside the ring app, against the
-real framework, before relying on it.
+This package is vendor-free: it holds the `RingLinking` protocol, `RingLinkState`, and the
+raw-value mapping. The Veepoo implementation (`VeepooRingLink`) lives in the app target at
+`ios/RingApp/CarePlixRing/Vendor/VeepooRingLink.swift`, behind the `VEEPOO` compile flag — a SwiftPM
+target never sees an app's framework search paths, so it could not be linked from here. That also
+means **the vendor-facing code path is the part least protected by these tests.** Compile it inside
+the ring app, against the real framework, before relying on it.
 
 What *is* established independently of any build: the disassembly findings in root causes #1 and #2,
 which came from the shipping binary and were reproduced by several independent passes, and root

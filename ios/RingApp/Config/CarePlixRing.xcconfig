@@ -1,0 +1,26 @@
+// Base configuration for the CarePlix Ring app target. Both Debug and Release point here.
+#include "Version.xcconfig"
+
+// Optional, git-ignored overlays. Missing files are silently skipped (#include?),
+// so a fresh clone builds and archives the demo-mode app with no setup at all.
+#include? "Signing.xcconfig"
+#include? "Vendor.xcconfig"
+
+PRODUCT_NAME = CarePlix Ring
+PRODUCT_BUNDLE_IDENTIFIER = com.careplix.ring
+CODE_SIGN_STYLE = Automatic
+IPHONEOS_DEPLOYMENT_TARGET = 17.0
+TARGETED_DEVICE_FAMILY = 1
+SUPPORTED_PLATFORMS = iphoneos iphonesimulator
+SUPPORTS_MACCATALYST = NO
+SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO
+SWIFT_VERSION = 5.9
+SWIFT_STRICT_CONCURRENCY = minimal
+ENABLE_BITCODE = NO
+INFOPLIST_FILE = CarePlixRing/Info.plist
+GENERATE_INFOPLIST_FILE = NO
+ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon
+ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor
+LD_RUNPATH_SEARCH_PATHS = $(inherited) @executable_path/Frameworks
+ENABLE_PREVIEWS = YES
+SWIFT_EMIT_LOC_STRINGS = YES

@@ -1,1 +1,9 @@
 docs/ux/canvas/careplix-ring-experience.html
+# CarePlix Ring app: local signing, licensed vendor SDK, build output
+ios/RingApp/Config/Signing.xcconfig
+ios/RingApp/Config/Vendor.xcconfig
+ios/RingApp/build/
+ios/Frameworks/
+xcuserdata/
+*.xcuserstate
+.DS_Store

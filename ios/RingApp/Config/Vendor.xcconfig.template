@@ -1,0 +1,6 @@
+// Written by scripts/link-vendor-sdk.sh. Do not edit by hand; do not commit.
+// Links the Veepoo ring SDK for DEVICE builds only (the vendor archives ship no simulator slice),
+// and defines VEEPOO so the app compiles its real ring data source instead of the demo one.
+FRAMEWORK_SEARCH_PATHS = $(inherited) $(PROJECT_DIR)/../Frameworks
+OTHER_LDFLAGS[sdk=iphoneos*] = $(inherited) -ObjC -framework VeepooBleSDK -framework JL_BLEKit -framework DFUnits -framework ABParTool -framework GRDFUSDK -framework JLDialUnit -framework ZipZap
+SWIFT_ACTIVE_COMPILATION_CONDITIONS[sdk=iphoneos*] = $(inherited) VEEPOO
